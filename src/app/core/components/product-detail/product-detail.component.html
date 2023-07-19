@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row d-flex align-items-center ">
+        <div class="col-sm-6">
+            <div class="overflow-hidden" style="height: 400px;">
+                <img src="assets/recomendacion.webp" class="object-fit" height="500" alt="">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <h1 class="display-1" style="font-size: 50px;">{{producto.titulo}}</h1>
+            <label *ngIf="producto.descuento" class="d-flex gap-2"><strong>$
+                    {{producto.precio-producto.precio*(producto.descuento/100)|number: '.0-2'}}</strong> <s
+                    class="opacity-50">$ {{producto.precio}}</s></label>
+            <label *ngIf="!producto.descuento">$ {{producto.precio | number: '.0-2'}}</label>
+            <div class="d-flex justify-content-start pb-2">
+                <ng-container *ngFor="let item of range(5); let i = index">
+                    <mat-icon color="accent" *ngIf="i<producto.calificacion">star</mat-icon>
+                    <mat-icon color="accent" *ngIf="i>=producto.calificacion">star_border</mat-icon>
+                </ng-container>
+            </div>
+            <p>{{producto.descripcion}}</p>
+            <button mat-button color="primary" class="text-center mt-5"><mat-icon>add_shopping_cart</mat-icon>
+                Comprar</button>
+        </div>
+    </div>
+    <mat-divider class="my-5"></mat-divider>
+    <div class="row">
+        <div class="col-sm-12 p-3">
+            <h1 class="display-1">Otros datos</h1>
+            <p>Si eres amante de las carnes y deseas preparar una receta con sabores hondureños, tienes que realizar
+                este exquisito plato típico de carne, un deleite para nuestro paladar. Puesto que al probar esta
+                riquísima comida quedarán encantado por su rico sabor; el cual va acompañado de unas ricas tajaditas de
+                plátano, arroz blanco, frijoles fritos, aguacate y mantequilla. ¡Tienes que probarlo! Es ideal para
+                festejar nuestro Bicentenario de Independencia. Así que, Buen Provecho se ha aliado con MAGGI, Marca
+                País Honduras, Embutidos Delicia, Pollo Norteño, Frí…íto Natura’s, De La Granja, Leyde y USA II; para
+                conmemorar los 200 años de cocina hondureña.
+
+                La gastronomía hondureña se caracteriza por darle un toque extraordinario a las comidas, sin embargo
+                esta rica receta típica de carne, será la excepción; ya que al prepararla sorprenderás a toda tu familia
+                o amigos, dado que es uno de los platos más destacado de nuestro país.</p>
+        </div>
+    </div>
+
+</div>

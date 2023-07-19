@@ -1,0 +1,15 @@
+<app-header (emisor)="drawer.toggle()"></app-header>
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <div class="p-5 position-sticky top-0">
+            <h3 class="h3 mb-2"><mat-icon>store_mall_directory</mat-icon> Mipymes</h3>
+            <div class="d-flex flex-column align-items-start justify-content-center gap-2">
+                <button mat-button *ngFor="let item of mipymes">{{item.texto}}</button>
+            </div>
+        </div>
+    </mat-drawer>
+    <div class="example-sidenav-content">
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>
+<app-footer></app-footer>

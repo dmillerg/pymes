@@ -1,0 +1,13 @@
+.cardpyme{
+    z-index: 0;
+    filter: brightness(0.5);
+    transform: scale(1);
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.cardpyme:hover{
+    filter: brightness(0.4);
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
+}

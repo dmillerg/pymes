@@ -1,0 +1,202 @@
+<!-- <mat-toolbar color="primary" style="margin-top: 60px;height: auto;">
+    <div class="d-flex justify-content-end align-items-center pt-4 w-100 gap-2 text-white">
+         <form action="" [formGroup]="form">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Buscar" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button mat-flat-button color="primary"><mat-icon>search</mat-icon></button>
+              </div>
+            </form>
+            <button mat-flat-button color="primary">Inicio</button>
+            <button mat-flat-button color="primary" routerLink="productos">Producto</button>
+            <button mat-flat-button color="primary">Ventas</button>
+    </div>
+</mat-toolbar> -->
+<ngb-carousel class="w-100 position-relative">
+    <ng-template ngbSlide>
+        <div class="w-100">
+            <img src="assets/pyme1.jpg" class="w-100 object-fit" height="400" alt="Angular Carousel 1">
+        </div>
+        <div
+            class="position-absolute top-0 left-0 w-100 h-100 text-white d-flex justify-content-evenly align-items-center px-5">
+            <div class="d-flex flex-column gap-2 justify-content-start">
+                <h3 class="display-5">Métodos de entrega</h3>
+                <p class="h3">Disponemos de entrega a domicilio.</p>
+            </div>
+            <mat-icon color="primary">
+                local_shipping
+            </mat-icon>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="w-100">
+            <img src="assets/pyme2.jpg" class="w-100 object-fit" height="400" alt="Angular Carousel 1">
+        </div>
+        <div
+            class="position-absolute top-0 left-0 w-100 h-100 text-white d-flex justify-content-evenly align-items-center px-5">
+            <div class="d-flex flex-column gap-2 justify-content-start">
+                <h3 class="display-5">Métodos de pago</h3>
+                <p class="h3">Usted puede pagar con visa, mastercard, zelle y mucho más.</p>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="w-100">
+            <img src="assets/pyme1.jpg" class="w-100 object-fit" height="400" alt="Angular Carousel 1">
+        </div>
+        <div
+            class="position-absolute top-0 left-0 w-100 h-100 text-white d-flex justify-content-evenly align-items-center px-5">
+            <div class="d-flex flex-column gap-2 justify-content-start">
+                <h3 class="display-5">Ofertas especiales</h3>
+                <p class="h3">Todos los meses ofrecemos ofertas y descuentos que usted puede disfrutar.</p>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="w-100">
+            <img src="assets/pyme1.jpg" class="w-100 object-fit" height="400" alt="Angular Carousel 1">
+        </div>
+        <div
+            class="position-absolute top-0 left-0 w-100 h-100 text-white d-flex justify-content-evenly align-items-center px-5">
+            <div class="d-flex flex-column gap-2 justify-content-start">
+                <h3 class="display-5">Asistente en línea</h3>
+                <p class="h3">Toda la ayuda que pueda necesitar a través de nuestros asistentes.</p>
+            </div>
+        </div>
+    </ng-template>
+</ngb-carousel>
+<div class="container pt-5">
+
+    <div class="row my-4">
+        <div class="col-sm-3 my-2">
+            <mat-card style="border-radius: 25px;">
+                <mat-card-content>
+                    <div class="d-flex justify-content-center align-items-center gap-2">
+                        <mat-icon color="primary">
+                            local_shipping
+                        </mat-icon>
+                        Métodos de entrega
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-sm-3 my-2">
+            <mat-card style="border-radius: 25px;">
+                <mat-card-content>
+                    <div class="d-flex justify-content-center align-items-center gap-2">
+                        <mat-icon color="primary">
+                            account_balance_wallet
+                        </mat-icon>
+                        Métodos de pago
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-sm-3 my-2">
+            <mat-card style="border-radius: 25px;">
+                <mat-card-content>
+                    <div class="d-flex justify-content-center align-items-center gap-2">
+                        <mat-icon color="primary">
+                            redeem
+                        </mat-icon>
+                        Ofertas especiales
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-sm-3 my-2">
+            <mat-card style="border-radius: 25px;">
+                <mat-card-content>
+                    <div class="d-flex justify-content-center align-items-center gap-2">
+                        <mat-icon color="primary">
+                            support_agent
+                        </mat-icon>
+                        Asistente en línea
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+    <div class="row mt-5 mb-4">
+        <h1 class="h1 text-center w-100"><strong>TOP MIPYMES</strong></h1>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4 mt-2" *ngFor="let item of pymes">
+            <app-pymes-card [titulo]="item.titulo" [imagen]="item.imagen"></app-pymes-card>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <h1 class="h1 text-center w-100"><strong>TOP PRODUCTS</strong></h1>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+        <div style="width: auto;">
+            <mat-chip-listbox aria-label="Fish selection">
+                <mat-chip-option>Ofertas</mat-chip-option>
+                <mat-chip-option>Rebajas</mat-chip-option>
+                <mat-chip-option>Recomendaciones</mat-chip-option>
+                <mat-chip-option>Especial</mat-chip-option>
+            </mat-chip-listbox>
+        </div>
+    </div>
+
+
+
+    <div class="row my-4">
+        <div class="col-sm-3 mt-2" *ngFor="let item of productos">
+            <app-product-card [producto]="item"></app-product-card>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid my-5">
+    <div class="row justify-content-center align-items-center mt-4" style="height: 600px;">
+        <div class="col-sm-3  d-flex flex-column gap-2">
+            <img src="assets/pyme1.jpg" alt="" class="object-fit flex-1" style="height: 300px;">
+            <img src="assets/pyme2.jpg" alt="" class="object-fit flex-1" style="height: 300px;">
+        </div>
+        <img src="assets/pyme3.jpg" alt="" class="col-sm-6 object-fit h-100">
+        <div class="col-sm-3 d-flex flex-column gap-2">
+            <img src="assets/pyme4.jpg" alt="" class="object-fit" style="height: 300px;">
+            <img src="assets/pyme5.jpg" alt="" class="object-fit" style="height: 300px;">
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-5">
+        <h1 class="h1 text-center w-100"><strong>TOP SELL</strong></h1>
+    </div>
+
+    <div class="row my-2">
+        <div class="col-sm-3 mt-2" *ngFor="let item of productos">
+            <app-product-card [producto]="item"></app-product-card>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="background-color: rgba(0, 0, 0, 0.05);">
+    <div class="row my-5 py-5">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <h1 class="display-1">100 MIPYMES hasta la fecha</h1>
+            <h1 class="display-1">Más de 300 productos</h1>
+            <h1 class="display-1">y</h1>
+            <h1 class="display-1">1000 clientes</h1>
+            <button mat-flat-button color="primary">Unirse</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-5">
+        <h1 class="h1 text-center w-100"><strong>COMMENTS</strong></h1>
+    </div>
+
+    <div class="row mt-2 mb-5">
+        <div class="col-sm-6 mt-2" *ngFor="let item of comentarios">
+            <app-comment-card [comentario]="item"></app-comment-card>
+        </div>
+    </div>
+</div>
