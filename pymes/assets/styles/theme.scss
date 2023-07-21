@@ -1,0 +1,48 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: mat.define-palette(mat.$cyan-palette, 400),
+      accent: mat.define-palette(mat.$light-green-palette, A400),
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+$dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: mat.define-palette(mat.$deep-purple-palette, A200),
+      accent: mat.define-palette(mat.$pink-palette, 300),
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+@include mat.all-component-themes($light-theme);
+
+.light-theme {
+  @include mat.all-component-themes($light-theme);
+  background: #fff;
+  color: #222;
+  button {
+    color: #fff;
+  }
+  mat-raised-button {
+    color: white;
+  }
+}
+
+.dark-theme {
+  @include mat.all-component-themes($dark-theme);
+  background: #222;
+  color: #f9f6f1;
+  button {
+    color: #fff;
+  }
+}
