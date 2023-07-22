@@ -64,6 +64,7 @@ export class HeaderComponent {
 
   openLogin(): void {
     const dialogRef = this.dialog.open(LoginComponent, {
+      width: '30%'
       // data: {name: this.name, animal: this.animal},
     });
 

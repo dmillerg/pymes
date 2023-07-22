@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { MatDrawerMode } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pymes';
+  mode = new FormControl('over' as MatDrawerMode);
+  shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
 
   mipymes: any[]=[
     {texto: 'Mercadito', ruta: '..'},

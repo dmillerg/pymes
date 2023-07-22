@@ -1,15 +1,50 @@
 <app-header (emisor)="drawer.toggle()"></app-header>
 <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-        <div class="p-5 position-sticky top-0">
-            <h3 class="h3 mb-2"><mat-icon>store_mall_directory</mat-icon> Mipymes</h3>
-            <div class="d-flex flex-column align-items-start justify-content-center gap-2">
-                <button mat-button *ngFor="let item of mipymes">{{item.texto}}</button>
-            </div>
-        </div>
-    </mat-drawer>
-    <div class="example-sidenav-content">
-        <router-outlet></router-outlet>
+  <mat-drawer #drawer class="example-sidenav position-fixed h-100 overflow-auto"[mode]="mode.value || 'over'">
+    <div class="p-5 position-sticky top-0">
+      <h1 class="h1 mt-5">Categorías</h1>
+            <h3>Comidas y bebidas</h3>
+            <mat-list>
+                <mat-list-item matRipple>
+                    <mat-icon matListItemIcon>lunch_dining</mat-icon>
+                    <span matListItemTitle>Carnes</span>
+                    <span matListItemLine>Carnicos de todo tipo</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListItemIcon>liquor</mat-icon>
+                    <span matListItemTitle>Bebidas y refrescos</span>
+                    <span matListItemLine>Refrescate con una de nuestras bebidas</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListItemIcon>yard</mat-icon>
+                    <span matListItemTitle>Frutas y vegetales</span>
+                    <span matListItemLine>Comida sana</span>
+                </mat-list-item>
+            </mat-list>
+            <h3>Equipos electrodomésticos</h3>
+            <mat-list>
+                <mat-list-item>
+                    <mat-icon matListItemIcon>ac_unit</mat-icon>
+                    <span matListItemTitle>Refrigeradores</span>
+                    <span matListItemLine>Equipos refrigerantes</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListItemIcon>local_laundry_service</mat-icon>
+                    <span matListItemTitle>Lavadoras</span>
+                    <span matListItemLine>Lavar ropa</span>
+                </mat-list-item>
+                    <mat-selection-list #shoes [multiple]="false">
+                        <mat-list-option *ngFor="let pyme of mipymes" [value]="pyme.texto">
+                            <mat-icon matListItemIcon>tv</mat-icon>  {{pyme.texto}}
+                        </mat-list-option>
+                      </mat-selection-list>
+            </mat-list>
+       
     </div>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </div>
+  
 </mat-drawer-container>
-<app-footer></app-footer>

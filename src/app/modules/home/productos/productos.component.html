@@ -1,55 +1,18 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-4 position-sticky top-0 left-0 h-100 w-25 p-5">
-            <h1 class="h1">Categorías</h1>
-            <h3>Comidas y bebidas</h3>
-            <mat-list>
-                <mat-list-item>
-                    <mat-icon matListItemIcon>lunch_dining</mat-icon>
-                    <span matListItemTitle>Carnes</span>
-                    <span matListItemLine>Carnicos de todo tipo</span>
-                </mat-list-item>
-                <mat-list-item>
-                    <mat-icon matListItemIcon>liquor</mat-icon>
-                    <span matListItemTitle>Bebidas y refrescos</span>
-                    <span matListItemLine>Refrescate con una de nuestras bebidas</span>
-                </mat-list-item>
-                <mat-list-item>
-                    <mat-icon matListItemIcon>yard</mat-icon>
-                    <span matListItemTitle>Frutas y vegetales</span>
-                    <span matListItemLine>Comida sana</span>
-                </mat-list-item>
-            </mat-list>
-            <h3>Equipos electrodomésticos</h3>
-            <mat-list>
-                <mat-list-item>
-                    <mat-icon matListItemIcon>ac_unit</mat-icon>
-                    <span matListItemTitle>Refrigeradores</span>
-                    <span matListItemLine>Equipos refrigerantes</span>
-                </mat-list-item>
-                <mat-list-item>
-                    <mat-icon matListItemIcon>local_laundry_service</mat-icon>
-                    <span matListItemTitle>Lavadoras</span>
-                    <span matListItemLine>Lavar ropa</span>
-                </mat-list-item>
-                <mat-list-item>
-                    <mat-icon matListItemIcon>tv</mat-icon>
-                    <span matListItemTitle>Televisores</span>
-                    <span matListItemLine>TV para toda la familia</span>
-                </mat-list-item>
-            </mat-list>
-
+  <div class="row">
+    <div class="col-sm-12 border-start">
+      <div class="row">
+        <app-product-detail [producto]="productos[0]"></app-product-detail>
+      </div>
+      <!-- <img src="assets/pyme2.jpg" class="object-fit" style="width: 100%;height: 200px;" alt=""> -->
+      <div class="row">
+        <div class="col-sm-4 my-2" *ngFor="let item of productos">
+          <app-product-card
+            [producto]="item"
+            [detalle]="true"
+          ></app-product-card>
         </div>
-        <div class="col-sm-8  border-start">
-            <div class="row">
-                <app-product-detail [producto]="productos[0]"></app-product-detail>
-            </div>
-            <!-- <img src="assets/pyme2.jpg" class="object-fit" style="width: 100%;height: 200px;" alt=""> -->
-            <div class="row">
-                <div class="col-sm-4 my-2" *ngFor="let item of productos">
-                    <app-product-card [producto]="item" [detalle]="true"></app-product-card>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
