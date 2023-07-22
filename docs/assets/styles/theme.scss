@@ -28,13 +28,38 @@ $dark-theme: mat.define-dark-theme(
 
 .light-theme {
   @include mat.all-component-themes($light-theme);
-  background: #fff;
+  background: #f9f6f1;
   color: #222;
+  $primary: #26c6da;
   button {
-    color: #fff;
-  }
-  mat-raised-button {
     color: white;
+  }
+  mat-card {
+    background-color: white;
+    border-radius: 25px;
+    padding: 10px;
+  }
+  .button-text-primary {
+    color: $primary;
+    background-color: transparent;
+  }
+  .button-text-primary:hover {
+    color: white;
+    background-color: $primary;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .button-text-primary:focus {
+    color: white;
+    background-color: $primary;
+    transform: scale(1.1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .borde-primary {
+    border-width: 1px;
+    border-color: $primary;
+  }
+  .bg-primary-mat{
+    background-color: $primary;
   }
 }
 
@@ -42,7 +67,51 @@ $dark-theme: mat.define-dark-theme(
   @include mat.all-component-themes($dark-theme);
   background: #222;
   color: #f9f6f1;
+  $primary: #7c4dff;
   button {
     color: #fff;
   }
+  mat-card {
+    border-radius: 25px;
+    padding: 10px;
+    button {
+      box-shadow: 0 0 0 0 transparent;
+    }
+  }
+  .button-text-primary {
+    color: $primary;
+    background-color: transparent;
+  }
+  .button-text-primary:hover {
+    color: white;
+    background-color: $primary;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .button-text-primary:focus {
+    color: white;
+    background-color: $primary;
+    transform: scale(1.1);
+    outline-style: solid;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .borde-primary {
+    border-width: 1px;
+    border-color: $primary;
+  }
+  .bg-primary-mat{
+    background-color: $primary;
+  }
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.carousel-indicators [data-bs-target] {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
 }
