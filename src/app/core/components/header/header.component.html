@@ -1,35 +1,83 @@
-<mat-toolbar color="primary" class="position-sticky top-0 pt-3" style="height: auto; z-index: 10;box-shadow: 2px 4px 17px 0px rgba(0,0,0,0.64);
--webkit-box-shadow: 2px 4px 17px 0px rgba(0,0,0,0.64);
--moz-box-shadow: 2px 4px 17px 0px rgba(0,0,0,0.64);">
-    <mat-toolbar-row class="d-flex  align-items-center text-white gap-4">
-        <div class="d-flex gap-2 align-items-center mb-4">
-            <button mat-icon-button color="basic" (click)="emisor.emit()"><mat-icon>menu</mat-icon></button>
-            <h1 class="h1">Pymes</h1>
-        </div>
-        <div class="flex-fill">
-            <form action="" [formGroup]="form">
-                <mat-form-field appearance="outline" style="font-size: 15px;overflow: hidden;">
-                    <input class="bg-white" style="color: #222;" matInput placeholder="Placeholder"
-                        formControlName="search">
-                    <mat-icon matSuffix color="primary">search</mat-icon>
-                </mat-form-field>
-            </form>
-        </div>
-        <div class="d-flex mb-4">
-
-            <button mat-icon-button aria-label="Example icon-button with heart icon" (click)="onChange()">
-                <mat-icon *ngIf="!mode">dark_mode</mat-icon>
-                <mat-icon *ngIf="mode">light_mode</mat-icon>
-            </button>
-            <button mat-icon-button>
-                <mat-icon>language</mat-icon>
-            </button>
-            <button mat-icon-button>
-                <mat-icon>person</mat-icon>
-            </button>
-            <button mat-icon-button (click)="navigate('productos')">
-                <mat-icon>shopping_cart</mat-icon>
-            </button>
-        </div>
-    </mat-toolbar-row>
+<mat-toolbar
+  color="primary"
+  class="position-sticky top-0 pt-3"
+  style="
+    height: auto;
+    z-index: 10;
+    box-shadow: 2px 4px 17px 0px rgba(0, 0, 0, 0.64);
+    -webkit-box-shadow: 2px 4px 17px 0px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: 2px 4px 17px 0px rgba(0, 0, 0, 0.64);
+  "
+>
+  <mat-toolbar-row class="d-flex align-items-center text-white gap-4">
+    <div class="d-flex gap-2 align-items-center mb-4">
+      <button mat-icon-button color="basic" (click)="emisor.emit()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1 class="h1">Pymes</h1>
+    </div>
+    <div class="flex-fill">
+      <form action="" [formGroup]="form">
+        <mat-form-field
+          appearance="outline"
+          style="font-size: 15px; overflow: hidden"
+        >
+          <input
+            class="bg-white"
+            style="color: #222"
+            matInput
+            placeholder="Placeholder"
+            formControlName="search"
+          />
+          <mat-icon matSuffix color="primary">search</mat-icon>
+        </mat-form-field>
+      </form>
+    </div>
+    <div class="d-flex d-sm-none mb-4 position-relative">
+      <button mat-icon-button>
+        <mat-icon>segment</mat-icon>
+      </button>
+      <!-- <div
+        class="d-flex flex-column justify-content-center align-items-center p-4 position-absolute card"
+        style="bottom: -100%;left: -100%;"
+      >
+      <button
+        mat-icon-button
+        aria-label="Example icon-button with heart icon"
+        (click)="onChange()"
+      >
+        <mat-icon *ngIf="!mode">dark_mode</mat-icon>
+        <mat-icon *ngIf="mode">light_mode</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>language</mat-icon>
+      </button>
+      <button mat-icon-button (click)="openLogin()">
+        <mat-icon>person</mat-icon>
+      </button>
+      <button mat-icon-button (click)="navigate('productos')">
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+    </div> -->
+    </div>
+    <div class="d-sm-flex d-none mb-4">
+      <button
+        mat-icon-button
+        aria-label="Example icon-button with heart icon"
+        (click)="onChange()"
+      >
+        <mat-icon *ngIf="!mode">dark_mode</mat-icon>
+        <mat-icon *ngIf="mode">light_mode</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>language</mat-icon>
+      </button>
+      <button mat-icon-button (click)="openLogin()">
+        <mat-icon>person</mat-icon>
+      </button>
+      <button mat-icon-button (click)="navigate('productos')">
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
 </mat-toolbar>

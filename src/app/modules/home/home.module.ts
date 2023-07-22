@@ -10,13 +10,16 @@ import { CommentCardComponent } from 'src/app/core/components/comment-card/comme
 import { ProductosComponent } from './productos/productos.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductDetailComponent } from 'src/app/core/components/product-detail/product-detail.component';
+import { CarouselComponent } from 'src/app/core/components/carousel/carousel.component';
+import { LoginComponent } from './login/login.component';
 
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    ProductosComponent
+    ProductosComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -28,6 +31,7 @@ import { ProductDetailComponent } from 'src/app/core/components/product-detail/p
     ProductDetailComponent,
     NgbModule,
     ReactiveFormsModule,
+    CarouselComponent,
   ]
 })
 export class HomeModule { }
